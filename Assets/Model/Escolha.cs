@@ -10,4 +10,7 @@ public class Escolha {
    public string[] respostas;
     //feedbackImg
    public Sprite[] imagensResposta;
+    
+   //url da onde esta a imagem na web
+   public string[] urlsImgs;
 }

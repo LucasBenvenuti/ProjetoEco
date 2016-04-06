@@ -1,0 +1,40 @@
+[{
+	"imagem":[
+		{"codImage":1,"urlImg":"http//:img"},
+		{"codImage":2,"urlImg":"http//:img"}
+		{"codImage":3,"urlImg":"http//:img"}
+	],
+	"texto":[
+		{"id":1,"texto":"Era uma vez um pudim","urlImgDoTexto":"http//pudim.img",
+			"escolha":[
+				"escolhas":[
+					"pudim","Eu amo pudim", "Pudim is love!"
+				]
+				"corretas":[
+					true,true,true
+				]
+				"respostas":[
+					"é sim","Eu tambem","é xim"	
+				]
+				"urlsImgs":[
+					"http://mimimi","http://mimimi","http://mimimi"
+				]
+			]
+		},{"id":2,"texto":"puff...","urlImgDoTexto":"http//pudim2.img"},
+
+		{"id":2,"texto":"puff...","urlImgDoTexto":"http//pudim2.img",
+		"comparativa":[
+			"respostas":[
+				"p","u","d","i","m"
+			],
+			"opcoes":[
+				"j","n","p","u","k","i","d","m"
+			]
+		]
+	}	
+			
+		
+
+	]
+
+}]

@@ -7,4 +7,6 @@ public class Imagem {
    public int codImage;
    //imagem 
    public Sprite image;
+   //url da onde esta a imagem na web
+   public string urlImg;
 }

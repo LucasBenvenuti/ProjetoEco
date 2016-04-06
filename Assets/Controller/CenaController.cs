@@ -46,6 +46,7 @@ public class CenaController : MonoBehaviour {
     // passa de um texto para outro
     void PassaTexto() {
         //verifica se o texto atual é o ultimo da cena, se não ele passa para o proximo texto
+        //tem que arrumar ~ 
         if (nTextos == contTextoAtual)
         {
             TrocarCena();
@@ -74,7 +75,13 @@ public class CenaController : MonoBehaviour {
     void TrocarCena()
     {
         //muda de cena
-        cenaAtual += 1;
+        try
+        {
+            cenaAtual += 1;
+        }
+        catch {
+            print("fail");
+        }
         //pega a quantidade de textos da cena
         nTextos = cenas[cenaAtual].texto.Length;
         CriaCena();

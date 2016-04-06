@@ -12,6 +12,9 @@ public class Texto {
 
     //img do texto -- é possivel que o texto nao seja uma string e sim uma imagem
     public Sprite imagemDoTexto;
+    //url da onde esta a imagem na web
+    public string urlImgDoTexto;
+
     //escolhas e feedbacks do texto -- mecanica de botoes 
     public Escolha escolha;
     //mecanica onde ha uma comparacao de imgs, letras, palavras ou frases
