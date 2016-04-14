@@ -7,7 +7,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 {
     public static GameObject itemBeingDragged;
     Vector3 StartPosition;
-    Transform StartParent;
+    public static Transform StartParent;
     public Transform TemporaryParent;
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -31,14 +31,14 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         print("OnEndDrag");
         itemBeingDragged = null;
-
         GetComponent<CanvasGroup>().blocksRaycasts = true;
 
-        if (transform.parent != StartParent)
+        if (transform.parent != StartParent && transform.parent == TemporaryParent.transform)
         {
+            transform.parent = StartParent;
             transform.position = StartPosition;
-        }
 
+        }
         
     }
 }

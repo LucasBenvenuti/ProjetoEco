@@ -43,6 +43,11 @@ public class CenaController : MonoBehaviour {
         // a partir disso ~> cenas[cenaAtual].
 
     }
+
+
+    /* parece estranho
+
+
     // passa de um texto para outro
     void PassaTexto() {
         //verifica se o texto atual é o ultimo da cena, se não ele passa para o proximo texto
@@ -70,7 +75,7 @@ public class CenaController : MonoBehaviour {
     {
 
     }
-
+    */
     //Troca de cena ,chama a funcao de criar nova cena
     void TrocarCena()
     {
