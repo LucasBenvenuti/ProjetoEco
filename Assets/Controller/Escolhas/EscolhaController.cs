@@ -9,20 +9,25 @@ public class EscolhaController : MonoBehaviour {
     string Texto = "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais";
     public GameObject PainelTexto;
     public GameObject resultado;
+
+    public Text TextoCena;
     //public Transform posicaoPainelEscolhas;
     //public GameObject[] escolhas;
 
     bool[] respostasUsadas;
     void Start () {
         //teste
-    baseDeDados = new Escolha();
-	baseDeDados.escolhas = new string[5]{ "parlavra","palavra","parlávra","palava","colhoro" }; 
-    baseDeDados.corretas = new bool[5] { false, true, false, false, false };
-    baseDeDados.respostas = new string[5] { "erooowwww","aEHOUUU", "nun", "%$¨@& brother", "nunca" };
+        baseDeDados = new Escolha();
+	    baseDeDados.escolhas = new string[5]{ "parlavra","palavra","parlávra","palava","colhoro" }; 
+        baseDeDados.corretas = new bool[5] { false, true, false, false, false };
+        baseDeDados.respostas = new string[5] { "erooowwww","aEHOUUU", "nun", "%$¨@& brother", "nunca" };
+
 
         //logica
         respostasUsadas = new bool[baseDeDados.escolhas.Length];
-     
+
+        //Texto da cena
+        TextoCena.text = Texto;
 
 
     InstanciaEscolhas();
@@ -43,19 +48,35 @@ public class EscolhaController : MonoBehaviour {
         //para cada string dentro do array de strings ele executa um loop até acabar as strings dentro do array.
         foreach (string escolha in baseDeDados.escolhas) {
 
-            GameObject Button = Instantiate(Resources.Load("Escolha")) as GameObject;
-            Button.transform.SetParent(PainelEscolhas);
-            Button.GetComponentInChildren<Text>().text = escolha;
-            Button.name = escolha;
+            GameObject button = Instantiate(Resources.Load("Escolha")) as GameObject;
+            button.transform.SetParent(PainelEscolhas);
+            button.GetComponentInChildren<Text>().text = escolha;
+            button.name = escolha;
             int j = i;
             if (respostasUsadas[j] == true)
             {
-                print("Foi");
-                Button.GetComponent<Button>().interactable = false;
+                //print("Foi");
+                //print(respostasUsadas[j].ToString());
+                
+                if (baseDeDados.corretas[j] == true)
+                {
+
+                    print("CORRETA");
+                    button.GetComponent<Button>().onClick.AddListener(() => { print(button.name); ResultadoEscolha(baseDeDados.respostas[j], j); });
+                }
+                else
+                {
+                    Color temp = new Color();
+                    temp.a = 0f;
+                    button.GetComponent<Image>().color = temp;
+                    button.GetComponentInChildren<Text>().gameObject.SetActive(false);
+                    button.GetComponent<Button>().interactable = false;
+                    print("FALSA");
+                }
             }
             else {
-                print(respostasUsadas[j].ToString());
-                Button.GetComponent<Button>().onClick.AddListener(() => {print(Button.name); ResultadoEscolha(baseDeDados.respostas[j],j); });
+                //print(respostasUsadas[j].ToString());
+                button.GetComponent<Button>().onClick.AddListener(() => {print(button.name); ResultadoEscolha(baseDeDados.respostas[j],j); });
             }
             //escolhas[j] = Button;
                 i++;
@@ -81,6 +102,11 @@ public class EscolhaController : MonoBehaviour {
         PainelTexto.SetActive(true);
         InstanciaEscolhas();
         resultado.SetActive(false);
+    }
+
+    void TrocaCena()
+    {
+
     }
     void Update() {
         //print(escolhas.Length.ToString());

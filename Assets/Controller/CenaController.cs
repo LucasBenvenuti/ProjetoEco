@@ -36,16 +36,36 @@ public class CenaController : MonoBehaviour {
 
     }
     //instancia a cena dependendo de qual se encontra e o tipo de mecanica
-                    // cria cena a partir de um tipo especifico
+    // cria cena a partir de um tipo especifico
     void CriaCena(string tipoDaCena) {
-    
+       
+        switch (tipoDaCena) {
+            case "choicescene":
+                print("Batata");
+                break;
+
+            case "comparativescene":
+                print("Batata2");
+                break;
+
+            case "normalscene":
+                print("Batata3");
+                break;
+
+            default:
+                print("Error");
+                break;
+
+        }
+       
+
         //coloca as  variaveis/inf na cena   
         // a partir disso ~> cenas[cenaAtual].
 
     }
 
 
-    /* parece estranho
+    
 
 
     // passa de um texto para outro
@@ -62,6 +82,7 @@ public class CenaController : MonoBehaviour {
         }
     }
 
+   /* parece estranho
     //Verifica as escolhas para dar o feedback visual e escrito da escolha, dependendo da escolha
     void VerificarEscolhas()
     {
@@ -92,4 +113,20 @@ public class CenaController : MonoBehaviour {
         CriaCena();
     }
 
+
+    IEnumerator Start() {
+        yield return cenas;
+        //verifica se a base de dados possui alguma cena
+        if (!(cenas.Length > 0))
+        {
+            print("crashed database!");
+        }
+        else {
+            nTextos = cenas[cenaAtual].texto.Length;
+        }
+
+        //se possuir cena, cria
+        CriaCena();
+
+    }//end Start()
 }

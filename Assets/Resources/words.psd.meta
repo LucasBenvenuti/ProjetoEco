@@ -1,0 +1,441 @@
+fileFormatVersion: 2
+guid: e7a1f1e13e4428a49be0ae9a6c5c731b
+timeCreated: 1437589556
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: "\xF5"
+    21300002: "\xE9"
+    21300004: "\xE1"
+    21300006: y
+    21300008: u
+    21300010: r
+    21300012: o
+    21300014: l
+    21300016: j
+    21300018: g
+    21300020: d
+    21300022: a
+    21300024: "\xF4"
+    21300026: "\xED"
+    21300028: "\xE7"
+    21300030: w
+    21300032: v
+    21300034: s
+    21300036: p
+    21300038: m
+    21300040: k
+    21300042: h
+    21300044: e
+    21300046: b
+    21300048: "\xE3"
+    21300050: "\xF3"
+    21300052: "\xFA"
+    21300054: z
+    21300056: x
+    21300058: t
+    21300060: q
+    21300062: n
+    21300064: ELOCAO
+    21300066: i
+    21300068: f
+    21300070: c
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: "\xF5"
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 188
+        width: 26
+        height: 56
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\xE9"
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 187
+        width: 26
+        height: 56
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\xE1"
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 189
+        width: 35
+        height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: y
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 189
+        width: 31
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: u
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 188
+        width: 29
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: r
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 189
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: o
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 188
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: l
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 188
+        width: 24
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: j
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 188
+        width: 22
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: g
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 188
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: d
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 189
+        width: 29
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: a
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 189
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\xF4"
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 114
+        width: 40
+        height: 57
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\xED"
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 115
+        width: 42
+        height: 56
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\xE7"
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 105
+        width: 37
+        height: 51
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: w
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 117
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: v
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 117
+        width: 31
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: s
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 116
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: p
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 117
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: m
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 117
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: k
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 117
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: h
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 117
+        width: 31
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: e
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 116
+        width: 24
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: b
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 116
+        width: 27
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\xE3"
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 44
+        width: 35
+        height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\xF3"
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 44
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: "\xFA"
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 44
+        width: 31
+        height: 55
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: z
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 45
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: x
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 45
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: t
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 45
+        width: 29
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: q
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 40
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: n
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 44
+        width: 29
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: i
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 42
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: f
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 45
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: c
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 43
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
