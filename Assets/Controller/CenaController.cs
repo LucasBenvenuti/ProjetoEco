@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
-public class CenaController : MonoBehaviour {
+public class CenaController : Singleton<CenaController> {
 //classe que controla a mecanica da cena 
 
     //Array de cenas do jogo
@@ -14,11 +15,33 @@ public class CenaController : MonoBehaviour {
     //numero de textos na cena atual
     public int nTextos;
     // define o texto atual da cena
-    public int contTextoAtual;
+    [SerializeField]
+    public static int contTextoAtual;
 
     //precisa capturar essa informação e verificar \/~
 
+    IEnumerator Start() {
+        yield return cenas;
+        //verifica se a base de dados possui alguma cena
+        if (!(cenas.Length > 0))
+        {
+            print("crashed database!");
+        }
+        else {
+            nTextos = cenas[cenaAtual].texto.Length;
+        }
+
+        //se possuir cena, cria
+        //CriaCena();
+    }//end Start()
+
     //verifica o tipo de mecanica e chama a funcao de criar cena por tipo especifico.
+    
+    void Update ()
+    {
+        print(contTextoAtual);
+    }
+
     void CriaCena()
     {
 
@@ -42,10 +65,13 @@ public class CenaController : MonoBehaviour {
         switch (tipoDaCena) {
             case "choicescene":
                 print("Batata");
+
+                SceneManager.LoadScene("Escolhas");
                 break;
 
             case "comparativescene":
                 print("Batata2");
+                SceneManager.LoadScene("DragDrop");
                 break;
 
             case "normalscene":
@@ -69,15 +95,18 @@ public class CenaController : MonoBehaviour {
 
 
     // passa de um texto para outro
-    void PassaTexto() {
+    public void PassaTexto() {
         //verifica se o texto atual é o ultimo da cena, se não ele passa para o proximo texto
         //tem que arrumar ~ 
         if (nTextos == contTextoAtual)
         {
+
             TrocarCena();
+
         }
         else {
             contTextoAtual += 1;
+            print("pao"+ contTextoAtual);
             CriaCena();
         }
     }
@@ -100,33 +129,12 @@ public class CenaController : MonoBehaviour {
     //Troca de cena ,chama a funcao de criar nova cena
     void TrocarCena()
     {
-        //muda de cena
-        try
-        {
-            cenaAtual += 1;
-        }
-        catch {
-            print("fail");
-        }
         //pega a quantidade de textos da cena
+        cenaAtual += 1;
         nTextos = cenas[cenaAtual].texto.Length;
+        print("TrocarCena");
         CriaCena();
     }
 
 
-    IEnumerator Start() {
-        yield return cenas;
-        //verifica se a base de dados possui alguma cena
-        if (!(cenas.Length > 0))
-        {
-            print("crashed database!");
-        }
-        else {
-            nTextos = cenas[cenaAtual].texto.Length;
-        }
-
-        //se possuir cena, cria
-        CriaCena();
-
-    }//end Start()
 }

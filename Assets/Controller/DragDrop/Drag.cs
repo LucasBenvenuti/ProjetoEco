@@ -10,6 +10,10 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public static Transform StartParent;
     public Transform TemporaryParent;
 
+    void Start()
+    {
+        TemporaryParent = transform.parent.parent.parent;
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         print("OnBeginDrag");

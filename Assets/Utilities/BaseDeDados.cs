@@ -4,11 +4,11 @@ using System.Collections;
 public class BaseDeDados {
 
     public  Cena[] cenas = new Cena[5];
-
+    public Cena temp = new Cena();
     //Cria uma base para as cenas
     public  void StartBase()
     {
-        Cena temp = new Cena();
+        //Cena temp = new Cena();
 
         temp.imagensDaCena = new Imagem[2] { new Imagem() , new Imagem() };
         temp.texto = new Texto[2] { new Texto(), new Texto() };
@@ -30,7 +30,7 @@ public class BaseDeDados {
         temp.imagensDaCena[1].image = new Sprite();
         temp.imagensDaCena[1].image = Resources.Load("cena1text2") as Sprite;
         temp.texto[1].comparativa = new Comparativo();
-        temp.texto[1].texto = "Fomre um tuberculo";
+        temp.texto[1].texto = "Forme um tuberculo";
 
         temp.texto[1].comparativa.resposta = new string[6] { "b", "a", "t", "a", "t", "a" };
         temp.texto[1].comparativa.opcoes = new string[10] { "x", "a", "y", "á", "b", "t", "t", "a", "h", "a" };

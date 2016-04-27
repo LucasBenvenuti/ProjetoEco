@@ -22,12 +22,16 @@ public class GameController : Singleton<GameController> {
     {
         //criando a base a partir da BaseDeDados e iniciando ela 
         BaseDeDados database = new BaseDeDados();
+        print("pudim");
         database.StartBase();
-
+        
         //pega a cena do gameobject
         cenaController = GetComponent<CenaController>();
         //alimenta a cenas do cenaController com as inf da database
-        cenaController.cenas = database.cenas;
+        if (cenaController.cenas == null)
+        {
+            cenaController.cenas = database.cenas;
+        }
          
     }
 }
