@@ -22,6 +22,7 @@ public class CenaController : Singleton<CenaController> {
 
     IEnumerator Start() {
         yield return cenas;
+    //    print("eo: " + contTextoAtual);
         //verifica se a base de dados possui alguma cena
         if (!(cenas.Length > 0))
         {
@@ -44,7 +45,7 @@ public class CenaController : Singleton<CenaController> {
 
     void CriaCena()
     {
-
+        print("cena atual: " + cenaAtual + "texto atual: " + contTextoAtual);
         if (cenas[cenaAtual].texto[contTextoAtual].escolha != null)
         {
             CriaCena("choicescene");

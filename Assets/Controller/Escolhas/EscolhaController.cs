@@ -16,8 +16,14 @@ public class EscolhaController : MonoBehaviour {
     //public Transform posicaoPainelEscolhas;
     //public GameObject[] escolhas;
 
+    CenaController cenaController;
+
+
     bool[] respostasUsadas;
+
     void Start () {
+        cenaController = FindObjectOfType<CenaController>();
+
         //teste
         baseDeDados = new Escolha();
 	    baseDeDados.escolhas = new string[5]{ "parlavra","palavra","parlávra","palava","colhoro" }; 
@@ -48,47 +54,51 @@ public class EscolhaController : MonoBehaviour {
         //escolhas = new GameObject[baseDeDados.escolhas.Length];
         //para cada string dentro do array de strings ele executa um loop até acabar as strings dentro do array.
         foreach (string escolha in baseDeDados.escolhas) {
-
             GameObject button = Instantiate(Resources.Load("Escolha")) as GameObject;
             button.transform.SetParent(PainelEscolhas);
             button.GetComponentInChildren<Text>().text = escolha;
             button.name = escolha;
             int j = i;
-            if (respostasUsadas[j] == true)
-            {
-                //print("Foi");
-                //print(respostasUsadas[j].ToString());
-                
+            bool respostaCorreta;
+
+            //print(respostasUsadas[j].ToString());
+            print(baseDeDados.corretas[j]);
                 if (baseDeDados.corretas[j] == true)
                 {
-
-                    print("CORRETA");
-                    FindObjectOfType<CenaController>().PassaTexto();
+               print("Foi");
+                respostaCorreta = true;
                     //SceneManager.LoadScene("CenaController");
-                    button.GetComponent<Button>().onClick.AddListener(() => { print(button.name); ResultadoEscolha(baseDeDados.respostas[j], j); });
+               
+                   //print("to funcionando"); FindObjectOfType<CenaController>().PassaTexto();
                 }
                 else
                 {
-                    Color temp = new Color();
-                    temp.a = 0f;
-                    button.GetComponent<Image>().color = temp;
-                    button.GetComponentInChildren<Text>().gameObject.SetActive(false);
-                    button.GetComponent<Button>().interactable = false;
+                respostaCorreta = false;
+                if (respostasUsadas[j] == true)
+                    {
+                        Color temp = new Color();
+                        temp.a = 0f;
+                        button.GetComponent<Image>().color = temp;
+                        button.GetComponentInChildren<Text>().gameObject.SetActive(false);
+                        button.GetComponent<Button>().interactable = false;
+
                     print("FALSA");
+                    }
                 }
-            }
-            else {
+            
+          
                 //print(respostasUsadas[j].ToString());
-                button.GetComponent<Button>().onClick.AddListener(() => {print(button.name); ResultadoEscolha(baseDeDados.respostas[j],j); });
+               button.GetComponent<Button>().onClick.AddListener(() => {print(button.name); ResultadoEscolha(baseDeDados.respostas[j], respostaCorreta); respostasUsadas[j] = true;  });
+                i++;
             }
             //escolhas[j] = Button;
-                i++;
-        }
+        
     }//end InstanciaEscolha
 
-    void ResultadoEscolha(string result,int clicado) {
+    void ResultadoEscolha(string result, bool correta) {
         foreach (Transform child in PainelEscolhas)
         {
+            
             Destroy(child.gameObject);
         }
 
@@ -96,9 +106,14 @@ public class EscolhaController : MonoBehaviour {
         PainelTexto.SetActive(false);
         PainelEscolhas.gameObject.SetActive (false);
         resultado.SetActive(true);
-        respostasUsadas[clicado] = true;
+        
         resultado.GetComponentInChildren<Text>().text = result;
-        resultado.GetComponent<Button>().onClick.AddListener(() => { RetornaAsEscolhas(); });
+        resultado.GetComponent<Button>().onClick.AddListener(() => {
+            if (correta) {
+                FindObjectOfType<CenaController>().PassaTexto();
+            }
+            RetornaAsEscolhas();
+        });
     }
     void RetornaAsEscolhas() {
         PainelEscolhas.gameObject.SetActive(true);
