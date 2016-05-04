@@ -65,7 +65,7 @@ public class EscolhaController : MonoBehaviour {
             print(baseDeDados.corretas[j]);
                 if (baseDeDados.corretas[j] == true)
                 {
-               print("Foi");
+                print("Foi");
                 respostaCorreta = true;
                     //SceneManager.LoadScene("CenaController");
                
