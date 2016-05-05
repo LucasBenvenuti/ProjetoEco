@@ -38,10 +38,7 @@ public class CenaController : Singleton<CenaController> {
 
     //verifica o tipo de mecanica e chama a funcao de criar cena por tipo especifico.
     
-    void Update ()
-    {
-        print(contTextoAtual);
-    }
+  
 
     void CriaCena()
     {

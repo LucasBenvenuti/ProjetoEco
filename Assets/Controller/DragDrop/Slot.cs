@@ -19,21 +19,29 @@ public class Slot : MonoBehaviour, IDropHandler {
 
     public void OnDrop(PointerEventData eventData)
     {
+        if (gameObject.name == Drag.itemBeingDragged.GetComponent<Drag>().tipo.ToString()) {
 
-        if (item)
-        {
-            //Mecanica do Swap
-            item.transform.parent = Drag.StartParent;
-            //Caso queira fazer a mecanica da galinha, somente tirar a linha de cima
-            
-            Drag.itemBeingDragged.transform.SetParent(transform);
-            ExecuteEvents.ExecuteHierarchy<IHasChanged>(gameObject, null, (x, y) => x.HasChanged());
+
+
+            if (item)
+            {
+                //Mecanica do Swap
+                item.transform.parent = Drag.StartParent;
+                //Caso queira fazer a mecanica da galinha, somente tirar a linha de cima
+
+                Drag.itemBeingDragged.transform.SetParent(transform);
+                ExecuteEvents.ExecuteHierarchy<IHasChanged>(gameObject, null, (x, y) => x.HasChanged());
+            }
+
+            if (!item)
+            {
+                Drag.itemBeingDragged.transform.SetParent(transform);
+                ExecuteEvents.ExecuteHierarchy<IHasChanged>(gameObject, null, (x, y) => x.HasChanged());
+            }
         }
-
-        if (!item)
+        else
         {
-            Drag.itemBeingDragged.transform.SetParent(transform);
-            ExecuteEvents.ExecuteHierarchy<IHasChanged>(gameObject, null, (x, y) => x.HasChanged());
+            Drag.itemBeingDragged.transform.SetParent(Drag.StartParent);
         }
     }
 }

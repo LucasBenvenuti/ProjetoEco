@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour, IHasChanged {
     // problema que estava dando é que essa funcao estava indo antes da funcao start dentro do game controller
     public IEnumerator InstanciaSlots()
     {
-        BaseDeDados baseDeDados = new BaseDeDados();
+     
         
 
         //controladorCena.contTextoAtual = 1;
@@ -48,32 +48,53 @@ public class Inventory : MonoBehaviour, IHasChanged {
 
             slot.transform.SetParent(OpcoesPainel);
             slot.GetComponentInChildren<Drag>().name = opcao;
+            slot.GetComponentInChildren<Drag>().tipo = controladorCena.cenas[controladorCena.cenaAtual].texto[CenaController.contTextoAtual].comparativa.tiposOpcoes[i];
+
             slot.GetComponentInChildren<Drag>().GetComponent<Image>().sprite = controladorCena.cenas[controladorCena.cenaAtual].texto[CenaController.contTextoAtual].comparativa.imagensOpcoes[i];
             i++;
         
         }
 
-     
+        i = 0;
         foreach (string resposta in respostasCorretas)
         {
             GameObject slot = Instantiate(Resources.Load("Slot")) as GameObject;
-     
+            slot.name = "";
+            slot.name += controladorCena.cenas[controladorCena.cenaAtual].texto[CenaController.contTextoAtual].comparativa.tiposRespostas[i];
+
+
             slot.transform.SetParent(RespostasPainel);
-           
+            i++;
         }
     }
 
-    void CompararRespostas ()
-    {
-        respostasPlayer = new string[slots.GetComponentsInChildren<Drag>().Length];
 
+    //ta funcionando
+    void PegarRespostasDoPlayer() {
         int f = 0;
-
-        foreach (Drag resposta in slots.GetComponentsInChildren<Drag>())
-        {
-            respostasPlayer[f] = resposta.name;
+        respostasPlayer = new string[respostasCorretas.Length];
+        foreach (Slot slot in slots.GetComponentsInChildren<Slot>()) {
+            if (slot.GetComponentInChildren<Drag>() != null)
+            {
+                respostasPlayer[f] = slot.GetComponentInChildren<Drag>().name;
+            }
+            else {
+                respostasPlayer[f] = "NADA";
+            }
             f++;
         }
+        foreach(string debug in respostasPlayer) {
+            print("P : " + debug);
+        }
+
+    }
+
+
+    //refazer para que seja feito unitariamente
+    void CompararRespostas ()
+    {
+        
+        PegarRespostasDoPlayer();
 
         if (respostasPlayer.Length == respostasCorretas.Length)
         {
@@ -82,11 +103,12 @@ public class Inventory : MonoBehaviour, IHasChanged {
                 if (respostasPlayer[i] == respostasCorretas[i])
                 {
                     print("Correto - " + respostasPlayer[i]);
+                    //RevelarErro(i, true);
                 }
                 else
                 {
                     print("Errada - " + respostasPlayer[i]);
-                    RevelarErro(i);
+                    //RevelarErro(i, false);
                 }
             }
         }
@@ -96,16 +118,25 @@ public class Inventory : MonoBehaviour, IHasChanged {
         }
     }
 
-    void RevelarErro (int slotErrado)
+    
+    void RevelarErro (int slotErrado, bool correta)
     {
-        slots.GetComponentsInChildren<Drag>()[slotErrado].GetComponent<Image>().color = Color.red;
-    }
+        if (correta) {
+
+          slots.GetComponentsInChildren<Drag>()[slotErrado].GetComponent<Image>().color = Color.green;
+
+        }
+        else {
+
+            slots.GetComponentsInChildren<Drag>()[slotErrado].GetComponent<Image>().color = Color.red;
+        }
+        }
     
     public void HasChanged()
     {
-        foreach (Drag opcoes in FindObjectsOfType<Drag>()) {
+        /*foreach (Drag opcoes in FindObjectsOfType<Drag>()) {
             opcoes.GetComponent<Image>().color = Color.white;
-        }
+        }*/
         System.Text.StringBuilder Builder = new System.Text.StringBuilder();
         Builder.Append(" - ");
              

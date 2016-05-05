@@ -6,6 +6,9 @@ using System;
 
 public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+
+    public int tipo;
+
     public static GameObject itemBeingDragged;
     Vector3 StartPosition;
     public static Transform StartParent;
@@ -26,6 +29,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void OnDrag(PointerEventData eventData)
     {
+        gameObject.GetComponent<Image>().color = Color.white;
         print("Drag");
         transform.SetParent(TemporaryParent);
         transform.position = Input.mousePosition;
@@ -37,6 +41,8 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         print("OnEndDrag");
         itemBeingDragged = null;
         GetComponent<CanvasGroup>().blocksRaycasts = true;
+        
+
 
         if (transform.parent != StartParent && transform.parent == TemporaryParent.transform)
         {
