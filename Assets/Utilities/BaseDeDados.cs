@@ -15,6 +15,8 @@ public class BaseDeDados {
 
         //cena1
         //take1
+
+        //Informacoes da cena de escolha
         temp.imagensDaCena[0].image = new Sprite();
         temp.imagensDaCena[0].image = Resources.Load("cena1text1") as Sprite;
         temp.texto[0].escolha = new Escolha();
@@ -27,17 +29,20 @@ public class BaseDeDados {
 
         //take2
 
+        //Informacoes da cena de Drag and Drop
         temp.imagensDaCena[1].image = new Sprite();
         temp.imagensDaCena[1].image = Resources.Load("cena1text2") as Sprite;
         temp.texto[1].comparativa = new Comparativo();
         temp.texto[1].texto = "Forme um tuberculo";
 
-        temp.texto[1].comparativa.resposta = new string[6] { "b", "a", "t", "a", "t", "a" };
-        temp.texto[1].comparativa.tiposRespostas = new int[6] { 0, 0, 0, 0, 0, 0 };
-        temp.texto[1].comparativa.opcoes = new string[10] { "x", "a", "y", "á", "b", "t", "t", "a", "h", "a" };
-        temp.texto[1].comparativa.tiposOpcoes = new int[10] { 1, 0, 1, 1, 0, 0, 0, 0, 1, 0 };
+        temp.texto[1].comparativa.resposta = new string[4] { "a", "m", "o", "r"};
+        temp.texto[1].comparativa.tiposRespostas = new int[4] { 0, 0, 0, 0 };
+        temp.texto[1].comparativa.opcoes = new string[10] { "x", "a", "y", "á", "m", "o", "t", "r", "h", "a" };
+        temp.texto[1].comparativa.tiposOpcoes = new int[10] { 1, 0, 1, 1, 0, 0, 1, 0, 1, 0 };
         temp.texto[1].comparativa.imagensOpcoes = new Sprite[temp.texto[1].comparativa.opcoes.Length];
 
+        //Ao ser carregada a sprite (no caso uma sprite sheet) dentro da pasta Resources com o nome words, a sprite carregada para cada opcao sera aquela 
+        //que a opcao tiver o mesmo nome da sprite dentro da sprite sheet words
         Sprite[] words = Resources.LoadAll<Sprite>("words");
 
         for (int i = 0; i < temp.texto[1].comparativa.imagensOpcoes.Length; i++) {
@@ -51,12 +56,6 @@ public class BaseDeDados {
             }
         }
         cenas[0] = temp;
-        /*     cena[0] = temp;
-             temp = new Cena();
-             cena[1] = temp;
-             Debug.Log("test : " + cena[0].texto[0].texto);
-             Debug.Log("test : " + cena[1].texto[0].texto);
-         */
 
     }
 }

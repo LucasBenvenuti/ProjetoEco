@@ -37,20 +37,25 @@ public class CenaController : Singleton<CenaController> {
     }//end Start()
 
     //verifica o tipo de mecanica e chama a funcao de criar cena por tipo especifico.
-    
-  
 
+
+    //Cria as cenas de acordo com acena em que o jogador se encontra. Existem 3 tipos de cenas, as cenas normais (apenas com textos e imagens), cenas de Drag and Drop
+    //e cenas de escolhas.
     void CriaCena()
     {
+        //Printa a cena atual
         print("cena atual: " + cenaAtual + "texto atual: " + contTextoAtual);
+        //Cria cenas de escolhas
         if (cenas[cenaAtual].texto[contTextoAtual].escolha != null)
         {
             CriaCena("choicescene");
         }
+        //Cria cenas de Drag and Drop
         else if (cenas[cenaAtual].texto[contTextoAtual].comparativa != null)
         {
             CriaCena("comparativescene");
         }
+        //Cria cenas normais
         else {
             CriaCena("normalscene");
         }
@@ -87,10 +92,6 @@ public class CenaController : Singleton<CenaController> {
         // a partir disso ~> cenas[cenaAtual].
 
     }
-
-
-    
-
 
     // passa de um texto para outro
     public void PassaTexto() {
